@@ -17,7 +17,7 @@ class Planet:
                 #Calculate the attraction between the two bodies
                 dist_sqr = math.sqrt((self.position[0] - body.position[0])**2 + (self.position[1] - body.position[1])**2)
                 dist_v = ((body.position[0] - self.position[0]) / dist_sqr, (body.position[1] - self.position[1]) / dist_sqr)
-                print(dist_sqr)
+                #print(dist_sqr)
 
                 # calculate the force according to newton f = G * m1 * m2 / r^2
                 force = ((self.mass * body.mass) / (dist_sqr**2)) * self.G
@@ -31,6 +31,7 @@ class Planet:
                 # add acceleration to the velocity
                 self.velocity[0] += acceleration[0] * self.sim_speed
                 self.velocity[1] += acceleration[1] * self.sim_speed
+                print(self.velocity)
         return
 
     def update_position(self):
